@@ -27,10 +27,10 @@
     .container {
       max-width: 1100px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 24px 20px 40px; /* slightly less top padding so logo sits nicely at very top */
     }
 
-    /* Centered logo above the heading */
+    /* Clean, non-cropped logo centered above the heading */
     .logo-wrap{
       display:flex;
       align-items:center;
@@ -38,17 +38,20 @@
       margin: 0 auto 18px auto;
     }
 
+    /* Use the original logo as-is: do not crop, round, or reshape. Keep aspect ratio. */
     .logo-img{
-      width:160px;
-      height:160px;
-      border-radius:50%;
-      object-fit:cover;
-      border: 4px solid rgba(255,255,255,0.06);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.6), 0 0 50px rgba(255,255,255,0.03) inset;
-      transition: transform .22s ease, filter .22s ease;
-      background: #000;
+      width: 320px;      /* default display size on desktop */
+      max-width: 86%;    /* responsive on small screens */
+      height: auto;      /* preserve original aspect ratio */
+      border-radius: 0;   /* remove circular cropping */
+      object-fit: contain;
+      border: none;       /* remove generated borders */
+      box-shadow: none;   /* remove heavy shadows so the logo looks clean */
+      transition: transform .18s ease;
+      background: transparent;
+      display: block;
     }
-    .logo-img:hover{ transform: translateY(-4px) scale(1.02); }
+    .logo-img:hover{ transform: translateY(-4px); }
 
     h1{
       margin: 8px 0 0 0;
@@ -76,17 +79,24 @@
 
     /* Responsive tweaks */
     @media (min-width:720px){
-      .logo-img{ width:180px; height:180px; }
+      .logo-img{ width: 360px; }
       h1{ font-size:64px; }
+    }
+    @media (max-width:420px){
+      .logo-img{ width: 220px; }
+      .container{ padding-top:18px; }
+      h1{ font-size:34px; letter-spacing:4px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
 
-    <!-- Logo centered above the main heading -->
+    <!-- Original logo centered above the main heading. Linked to the original source. -->
     <div class="logo-wrap" role="img" aria-label="EliteWolf logo">
-      <img class="logo-img" src="/file_00000000fa40820a8737b40afeb554cb.png" alt="EliteWolf logo">
+      <a href="https://ibb.co/v4z6yw0X" target="_blank" rel="noopener noreferrer">
+        <img class="logo-img" src="https://ibb.co/v4z6yw0X" alt="EliteWolf original logo">
+      </a>
     </div>
 
     <h1>EliteWolf</h1>
