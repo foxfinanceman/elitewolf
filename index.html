@@ -15,7 +15,7 @@
       --glass-border: rgba(255,255,255,0.03);
       --button-bg: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
     }
-    html,body{ height:100%; margin:0; background: radial-gradient(1200px 600px at 10% 10%, rgba(120,45,255,0.06), transparent), linear-gradient(180deg,#040404 0%, #071016 100%); color:#eaeaea; font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; -webkit-font-smoothing:antialiased; }
+    html,body{ height:100%; margin:0; background: radial-gradient(1200px 600px at 10% 10%, rgba(120,45,255,0.06), transparent), linear-gradient(180deg,#040404 0%, #071016 100%); color:#eaeaea; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto',sans-serif; }
     a{ color:inherit }
 
     .container{ max-width:1100px; margin:auto; padding:36px 20px 60px; text-align:center; }
@@ -119,16 +119,15 @@
         <div class="tagline">Stay Hungry. Stay Cold. Stay Elite.</div>
       </div>
 
-      <!-- Strong buy button + join button near main title -->
+      <!-- Join button near main title -->
       <div class="cta-row" role="navigation" aria-label="Primary actions">
-        <a class="btn btn-primary" href="#buy" id="buyButton" aria-label="Buy ELITE">BUY $ELITE</a>
         <a class="btn btn-ghost" href="https://t.me/EliteWolfCommunity" target="_blank" rel="noopener noreferrer" aria-label="Join the pack on Telegram">JOIN THE PACK</a>
       </div>
     </div>
 
     <div class="buttons" role="navigation" aria-label="Social links">
       <a href="https://t.me/EliteWolfCommunity" target="_blank" rel="noopener noreferrer">Telegram</a>
-      <a href="https://x.com/ELITEWOLF" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+      <a href="https://x.com/EliteWolfCoin" target="_blank" rel="noopener noreferrer">X / Twitter</a>
     </div>
 
     <div class="section">
@@ -153,15 +152,5 @@
 
     <footer>🐺 EliteWolf — Welcome to the Pack.</footer>
   </div>
-
-  <script>
-    // Lightweight interaction: scroll to buy section / placeholder
-    document.getElementById('buyButton').addEventListener('click', function(e){
-      e.preventDefault();
-      // For now scroll to the Token section (existing on-page content)
-      var tokenSection = document.querySelector('.section:nth-of-type(3)');
-      if(tokenSection){ tokenSection.scrollIntoView({behavior:'smooth', block:'center'}); }
-    });
-  </script>
 </body>
 </html>
