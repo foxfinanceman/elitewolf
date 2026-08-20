@@ -1,70 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>EliteWolf — The Wolf Pack</title>
-
-  <meta name="description" content="EliteWolf — a community-driven meme coin built around the Wolf Pack.">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EliteWolf</title>
   <style>
-    :root{
-      --bg1:#050505;
-      --bg2:#0b0b0b;
-      --muted:#bdbdbd;
-    }
-
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
-      color: white;
-      text-align: center;
-      -webkit-font-smoothing:antialiased;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 24px 20px 40px; /* slightly less top padding so logo sits nicely at very top */
-    }
+    :root{ --bg: #070707; --muted:#9aa0a6; }
+    html,body{ height:100%; margin:0; background:linear-gradient(180deg,#040404 0%, #071016 100%); color:#eaeaea; font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    .container{ max-width:1100px; margin:auto; padding:24px 20px 40px; text-align:center; -webkit-font-smoothing:antialiased; }
 
     /* Clean, non-cropped logo centered above the heading */
-    .logo-wrap{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin: 0 auto 18px auto;
-    }
+    .logo-wrap{ display:flex; align-items:center; justify-content:center; margin:0 auto 18px auto; }
 
     /* Use the original logo as-is: do not crop, round, or reshape. Keep aspect ratio. */
     .logo-img{
-      width: 320px;      /* default display size on desktop */
-      max-width: 86%;    /* responsive on small screens */
-      height: auto;      /* preserve original aspect ratio */
-      border-radius: 0;   /* remove circular cropping */
-      object-fit: contain;
-      border: none;       /* remove generated borders */
-      box-shadow: none;   /* remove heavy shadows so the logo looks clean */
-      transition: transform .18s ease;
-      background: transparent;
-      display: block;
+      width:320px;      /* default display size on desktop */
+      max-width:86%;    /* responsive on small screens */
+      height:auto;      /* preserve original aspect ratio */
+      border-radius:0;   /* remove circular cropping */
+      object-fit:contain;
+      border:none;       /* remove generated borders */
+      box-shadow:none;   /* remove heavy shadows so the logo looks clean */
+      transition:transform .18s ease;
+      background:transparent;
+      display:block;
     }
     .logo-img:hover{ transform: translateY(-4px); }
 
-    h1{
-      margin: 8px 0 0 0;
-      font-size: 48px;
-      letter-spacing:6px;
-      text-transform:uppercase;
-      background: linear-gradient(90deg,#ffffff 0%, #c9fffb 45%, #b3ffea 100%);
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-      text-shadow: 0 8px 30px rgba(0,0,0,0.6);
-    }
-
+    h1{ margin:8px 0 0 0; font-size:48px; letter-spacing:6px; text-transform:uppercase; background: linear-gradient(90deg,#ffffff 0%, #c9fffb 45%, #b3ffea 100%); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow: 0 8px 30px rgba(0,0,0,0.6); }
     .tagline{ color: var(--muted); margin-top:8px; font-size:16px; }
 
     .buttons{ margin-top:20px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
@@ -73,28 +36,20 @@
 
     .section{ margin-top:40px; padding:28px; border-radius:14px; background: rgba(255,255,255,0.01); border:1px solid rgba(255,255,255,0.02); }
     .section h2{ font-size:24px; }
-
     .contract{ word-break:break-all; color:#aaa; }
     footer{ margin-top:48px; color:#7a7a7a; }
 
     /* Responsive tweaks */
-    @media (min-width:720px){
-      .logo-img{ width: 360px; }
-      h1{ font-size:64px; }
-    }
-    @media (max-width:420px){
-      .logo-img{ width: 220px; }
-      .container{ padding-top:18px; }
-      h1{ font-size:34px; letter-spacing:4px; }
-    }
+    @media (min-width:720px){ .logo-img{ width:360px; } h1{ font-size:64px; } }
+    @media (max-width:420px){ .logo-img{ width:220px; } .container{ padding-top:18px; } h1{ font-size:34px; letter-spacing:4px; } }
   </style>
 </head>
 <body>
   <div class="container">
 
-    <!-- Original logo centered above the main heading. Using local /logo.png -->
+    <!-- Original logo centered above the main heading. Using the local repository image file only (no external URLs). -->
     <div class="logo-wrap" role="img" aria-label="EliteWolf logo">
-      <img class="logo-img" src="/logo.png" alt="EliteWolf original logo">
+      <img class="logo-img" src="file_00000000fa40820a8737b40afeb554cb.png" alt="EliteWolf original logo">
     </div>
 
     <h1>EliteWolf</h1>
