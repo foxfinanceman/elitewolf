@@ -5,43 +5,104 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>EliteWolf</title>
   <style>
-    :root{ --bg: #070707; --muted:#9aa0a6; }
-    html,body{ height:100%; margin:0; background:linear-gradient(180deg,#040404 0%, #071016 100%); color:#eaeaea; font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-    .container{ max-width:1100px; margin:auto; padding:24px 20px 40px; text-align:center; -webkit-font-smoothing:antialiased; }
-
-    /* Clean, non-cropped logo centered above the heading */
-    .logo-wrap{ display:flex; align-items:center; justify-content:center; margin:0 auto 18px auto; }
-
-    /* Use the original logo as-is: do not crop, round, or reshape. Keep aspect ratio. */
-    .logo-img{
-      width:320px;      /* default display size on desktop */
-      max-width:86%;    /* responsive on small screens */
-      height:auto;      /* preserve original aspect ratio */
-      border-radius:0;   /* remove circular cropping */
-      object-fit:contain;
-      border:none;       /* remove generated borders */
-      box-shadow:none;   /* remove heavy shadows so the logo looks clean */
-      transition:transform .18s ease;
-      background:transparent;
-      display:block;
+    :root{
+      --bg:#050509;
+      --panel: rgba(255,255,255,0.02);
+      --muted:#9aa0a6;
+      --accent:#7ef6e6; /* cyan */
+      --accent-2:#8b6bff; /* purple */
+      --danger:#ff6b6b;
+      --glass-border: rgba(255,255,255,0.03);
+      --button-bg: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
     }
+    html,body{ height:100%; margin:0; background: radial-gradient(1200px 600px at 10% 10%, rgba(120,45,255,0.06), transparent), linear-gradient(180deg,#040404 0%, #071016 100%); color:#eaeaea; font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; -webkit-font-smoothing:antialiased; }
+    a{ color:inherit }
+
+    .container{ max-width:1100px; margin:auto; padding:36px 20px 60px; text-align:center; }
+
+    /* Logo stays exactly as-is visually */
+    .logo-wrap{ display:flex; align-items:center; justify-content:center; margin:0 auto 10px auto; }
+    .logo-img{ width:320px; max-width:86%; height:auto; border-radius:0; object-fit:contain; border:none; box-shadow:none; transition:transform .18s ease; background:transparent; display:block; }
     .logo-img:hover{ transform: translateY(-4px); }
 
-    h1{ margin:8px 0 0 0; font-size:48px; letter-spacing:6px; text-transform:uppercase; background: linear-gradient(90deg,#ffffff 0%, #c9fffb 45%, #b3ffea 100%); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow: 0 8px 30px rgba(0,0,0,0.6); }
-    .tagline{ color: var(--muted); margin-top:8px; font-size:16px; }
+    /* Title with strong glowing pulsing animation */
+    .title-row{ display:flex; flex-direction:column; align-items:center; gap:12px; }
+    h1{
+      margin:8px 0 0 0;
+      font-size:60px;
+      letter-spacing:8px;
+      text-transform:uppercase;
+      font-weight:900;
+      line-height:1;
+      color: #fff;
+      position:relative;
+      z-index:1;
+      -webkit-font-smoothing:antialiased;
+      background: linear-gradient(90deg,#ffffff 0%, #c9fffb 45%, #b3ffea 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: pulseGlow 3.6s ease-in-out infinite;
+      will-change:transform;
+      text-shadow: 0 0 24px rgba(126,246,230,0.08), 0 0 48px rgba(139,107,255,0.04);
+    }
+    @keyframes pulseGlow{
+      0% { filter: drop-shadow(0 0 0 rgba(126,246,230,0.0)); transform:translateY(0) scale(1); }
+      30% { filter: drop-shadow(0 0 32px rgba(126,246,230,0.18)); transform:translateY(-2px) scale(1.02); }
+      60% { filter: drop-shadow(0 0 48px rgba(139,107,255,0.12)); transform:translateY(0) scale(1); }
+      100% { filter: drop-shadow(0 0 0 rgba(126,246,230,0.0)); transform:translateY(0) scale(1); }
+    }
 
+    .tagline{ color: var(--muted); margin-top:6px; font-size:16px; }
+
+    /* CTA buttons near the title */
+    .cta-row{ display:flex; gap:12px; align-items:center; justify-content:center; margin-top:18px; flex-wrap:wrap; }
+    .btn{
+      display:inline-flex; align-items:center; gap:10px; padding:12px 20px; border-radius:14px; font-weight:800; font-size:15px; text-decoration:none; cursor:pointer;
+      border:1px solid rgba(255,255,255,0.06); background:var(--button-bg); color:#e9fbf8; transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn:active{ transform:translateY(1px) scale(.997); }
+    .btn-primary{
+      background: linear-gradient(90deg, rgba(126,246,230,0.08), rgba(139,107,255,0.06));
+      border: 1px solid rgba(126,246,230,0.12);
+      color:#dffefb;
+    }
+    .btn-ghost{
+      background: transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted);
+    }
+    /* subtle glowing animation on hover/tap */
+    .btn:hover, .btn:focus{
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 18px 42px rgba(2,6,23,0.65), 0 0 28px rgba(126,246,230,0.06);
+    }
+    .btn-primary:hover{ box-shadow: 0 20px 60px rgba(126,246,230,0.14), 0 0 56px rgba(126,246,230,0.14); }
+
+    /* Social buttons area (keep original) */
     .buttons{ margin-top:20px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
-    .buttons a{ display:inline-block; padding:10px 18px; border-radius:12px; background:#fff; color:#0b0b0b; text-decoration:none; font-weight:700; box-shadow: 0 8px 24px rgba(0,0,0,0.45); }
+    .buttons a{ display:inline-block; padding:10px 18px; border-radius:12px; background:#fff; color:#0b0b0b; text-decoration:none; font-weight:700; box-shadow: 0 8px 24px rgba(0,0,0,0.45); transition:transform .18s ease; }
     .buttons a:hover{ transform:translateY(-3px); }
 
-    .section{ margin-top:40px; padding:28px; border-radius:14px; background: rgba(255,255,255,0.01); border:1px solid rgba(255,255,255,0.02); }
-    .section h2{ font-size:24px; }
-    .contract{ word-break:break-all; color:#aaa; }
-    footer{ margin-top:48px; color:#7a7a7a; }
+    .section{ margin-top:36px; padding:26px; border-radius:14px; background: var(--panel); border:1px solid var(--glass-border); text-align:left; }
+    .section h2{ font-size:20px; margin:0 0 8px 0; }
+    .section p{ margin:6px 0; color:#d6d6d6; }
+    .contract{ word-break:break-all; color:#bfbfbf; }
+    footer{ margin-top:48px; color:#7a7a7a; text-align:center; }
 
-    /* Responsive tweaks */
-    @media (min-width:720px){ .logo-img{ width:360px; } h1{ font-size:64px; } }
-    @media (max-width:420px){ .logo-img{ width:220px; } .container{ padding-top:18px; } h1{ font-size:34px; letter-spacing:4px; } }
+    /* layout tweaks for title area to keep everything compact on mobile */
+    .hero{ display:flex; flex-direction:column; align-items:center; gap:6px; }
+
+    /* Accessibility: visible focus ring */
+    .btn:focus{ outline:2px solid rgba(126,246,230,0.16); outline-offset:3px; }
+
+    /* Responsive */
+    @media (min-width:720px){ .logo-img{ width:360px; } h1{ font-size:88px; letter-spacing:10px; } .container{ padding-top:48px; } }
+    @media (max-width:420px){ .logo-img{ width:220px; } .container{ padding-top:18px; } h1{ font-size:36px; letter-spacing:4px; } .cta-row{ gap:8px; }
+      .btn{ padding:10px 14px; font-size:13px; border-radius:12px; }
+    }
+
+    /* Keep the site fast and clean: no heavy assets or fonts loaded */
   </style>
 </head>
 <body>
@@ -52,8 +113,18 @@
       <img class="logo-img" src="file_00000000fa40820a8737b40afeb554cb.png" alt="EliteWolf original logo">
     </div>
 
-    <h1>EliteWolf</h1>
-    <div class="tagline">Stay Hungry. Stay Cold. Stay Elite.</div>
+    <div class="hero">
+      <div class="title-row">
+        <h1>ELITE WOLF</h1>
+        <div class="tagline">Stay Hungry. Stay Cold. Stay Elite.</div>
+      </div>
+
+      <!-- Strong buy button + join button near main title -->
+      <div class="cta-row" role="navigation" aria-label="Primary actions">
+        <a class="btn btn-primary" href="#buy" id="buyButton" aria-label="Buy ELITE">BUY $ELITE</a>
+        <a class="btn btn-ghost" href="https://t.me/EliteWolfCommunity" target="_blank" rel="noopener noreferrer" aria-label="Join the pack on Telegram">JOIN THE PACK</a>
+      </div>
+    </div>
 
     <div class="buttons" role="navigation" aria-label="Social links">
       <a href="https://t.me/EliteWolfCommunity" target="_blank" rel="noopener noreferrer">Telegram</a>
@@ -82,5 +153,15 @@
 
     <footer>🐺 EliteWolf — Welcome to the Pack.</footer>
   </div>
+
+  <script>
+    // Lightweight interaction: scroll to buy section / placeholder
+    document.getElementById('buyButton').addEventListener('click', function(e){
+      e.preventDefault();
+      // For now scroll to the Token section (existing on-page content)
+      var tokenSection = document.querySelector('.section:nth-of-type(3)');
+      if(tokenSection){ tokenSection.scrollIntoView({behavior:'smooth', block:'center'}); }
+    });
+  </script>
 </body>
 </html>
