@@ -437,9 +437,175 @@
       color:#d6d6d6;
     }
 
-    .contract{
+    /* =========================
+       ROADMAP
+    ========================= */
+
+    .roadmap{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .roadmap-card{
+      padding:20px;
+      border-radius:14px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(126,246,230,0.045),
+          rgba(139,107,255,0.035)
+        );
+
+      border:1px solid rgba(255,255,255,0.05);
+
+      transition:
+        transform .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease;
+    }
+
+    .roadmap-card:hover{
+      transform:translateY(-4px);
+
+      border-color:rgba(126,246,230,0.15);
+
+      box-shadow:
+        0 14px 35px rgba(0,0,0,0.28);
+    }
+
+    .roadmap-phase{
+      display:inline-block;
+
+      margin-bottom:7px;
+
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:1.5px;
+
+      color:#7ef6e6;
+    }
+
+    .roadmap-card h3{
+      margin:0 0 10px;
+
+      font-size:18px;
+
+      color:#fff;
+    }
+
+    .roadmap-card ul{
+      margin:0;
+      padding-left:20px;
+
+      color:#c9ced0;
+    }
+
+    .roadmap-card li{
+      margin:5px 0;
+    }
+
+    /* =========================
+       CONTRACT
+    ========================= */
+
+    .contract-box{
+      margin-top:14px;
+      padding:18px;
+
+      border-radius:14px;
+
+      background:
+        rgba(255,255,255,0.025);
+
+      border:1px solid rgba(126,246,230,0.10);
+    }
+
+    .contract-label{
+      margin-bottom:10px;
+
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:.7px;
+
+      color:#bfc5c8;
+    }
+
+    .contract-row{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      width:100%;
+    }
+
+    .contract-address{
+      flex:1;
+
+      padding:12px 14px;
+
+      border-radius:10px;
+
+      background:#050509;
+
+      border:1px solid rgba(255,255,255,0.06);
+
+      color:#9ff8ea;
+
+      font-size:13px;
+
       word-break:break-all;
-      color:#bfbfbf;
+      text-align:left;
+
+      box-sizing:border-box;
+    }
+
+    .copy-btn{
+      flex-shrink:0;
+
+      padding:12px 16px;
+
+      border-radius:10px;
+
+      border:1px solid rgba(126,246,230,0.16);
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(126,246,230,0.10),
+          rgba(139,107,255,0.08)
+        );
+
+      color:#dffefb;
+
+      font-weight:900;
+      font-size:13px;
+
+      cursor:pointer;
+
+      transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+    }
+
+    .copy-btn:hover{
+      transform:translateY(-2px);
+
+      box-shadow:
+        0 10px 25px rgba(126,246,230,0.10);
+    }
+
+    .copy-status{
+      min-height:20px;
+
+      margin-top:8px;
+
+      font-size:12px;
+
+      color:#7ef6e6;
+
+      text-align:center;
     }
 
     /* =========================
@@ -469,6 +635,26 @@
 
       .container{
         padding-top:48px;
+      }
+    }
+
+    @media (max-width:650px){
+
+      .roadmap{
+        grid-template-columns:1fr;
+      }
+
+      .contract-row{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .copy-btn{
+        width:100%;
+      }
+
+      .contract-address{
+        text-align:center;
       }
     }
 
@@ -508,6 +694,18 @@
       .play-beta{
         width:100%;
         box-sizing:border-box;
+      }
+
+      .section{
+        padding:20px 16px;
+      }
+
+      .roadmap-card{
+        padding:17px;
+      }
+
+      .contract-address{
+        font-size:11px;
       }
     }
 
@@ -710,7 +908,7 @@
 
 
     <!-- =========================
-         ROADMAP
+         NEW ROADMAP
     ========================= -->
 
     <div class="section">
@@ -719,38 +917,136 @@
         🚀 Roadmap
       </h2>
 
-      <p>
-        Phase 1 — Build the Pack
-      </p>
+      <div class="roadmap">
 
-      <p>
-        Phase 2 — Grow the Community
-      </p>
+        <div class="roadmap-card">
 
-      <p>
-        Phase 3 — Expand EliteWolf
-      </p>
+          <div class="roadmap-phase">
+            PHASE 1
+          </div>
 
-      <p>
-        Phase 4 — Let the Pack Run
-      </p>
+          <h3>
+            🐺 Foundation
+          </h3>
+
+          <ul>
+            <li>Launch $ELITEWOLF</li>
+            <li>Build the EliteWolf website</li>
+            <li>Build the community</li>
+            <li>Establish the Wolf Pack</li>
+          </ul>
+
+        </div>
+
+
+        <div class="roadmap-card">
+
+          <div class="roadmap-phase">
+            PHASE 2
+          </div>
+
+          <h3>
+            🎮 Game Beta
+          </h3>
+
+          <ul>
+            <li>Launch EliteWolf Game Beta</li>
+            <li>Wolf evolution system</li>
+            <li>Training & XP system</li>
+            <li>Food & inventory system</li>
+            <li>Community testing & feedback</li>
+          </ul>
+
+        </div>
+
+
+        <div class="roadmap-card">
+
+          <div class="roadmap-phase">
+            PHASE 3
+          </div>
+
+          <h3>
+            🔥 Grow the Pack
+          </h3>
+
+          <ul>
+            <li>Grow the EliteWolf community</li>
+            <li>Improve the game</li>
+            <li>Add new gameplay features</li>
+            <li>Community events & competitions</li>
+            <li>Build long-term engagement</li>
+          </ul>
+
+        </div>
+
+
+        <div class="roadmap-card">
+
+          <div class="roadmap-phase">
+            PHASE 4
+          </div>
+
+          <h3>
+            👑 EliteWolf Expansion
+          </h3>
+
+          <ul>
+            <li>Full game release</li>
+            <li>More gameplay mechanics</li>
+            <li>Leaderboards & rewards</li>
+            <li>Expand the EliteWolf ecosystem</li>
+          </ul>
+
+        </div>
+
+      </div>
 
     </div>
 
 
     <!-- =========================
-         TOKEN
+         TOKEN / CONTRACT
     ========================= -->
 
     <div class="section">
 
       <h2>
-        💎 Token
+        💎 $ELITEWOLF Token
       </h2>
 
-      <p class="contract">
-        Contract address will be announced through official channels.
-      </p>
+      <div class="contract-box">
+
+        <div class="contract-label">
+          🐺 CONTRACT ADDRESS
+        </div>
+
+        <div class="contract-row">
+
+          <div
+            class="contract-address"
+            id="contractAddress"
+          >
+            3cbBLp4q6pQi5sUjsWHLmVKa7fGnwygxtzDdtvgLpump
+          </div>
+
+          <button
+            class="copy-btn"
+            type="button"
+            onclick="copyContract()"
+          >
+            📋 COPY CA
+          </button>
+
+        </div>
+
+        <div
+          class="copy-status"
+          id="copyStatus"
+          aria-live="polite"
+        ></div>
+
+      </div>
 
     </div>
 
@@ -764,6 +1060,45 @@
     </footer>
 
   </div>
+
+
+  <!-- =========================
+       COPY CONTRACT SCRIPT
+  ========================= -->
+
+  <script>
+
+    function copyContract(){
+
+      const address =
+        "3cbBLp4q6pQi5sUjsWHLmVKa7fGnwygxtzDdtvgLpump";
+
+      const status =
+        document.getElementById("copyStatus");
+
+      navigator.clipboard.writeText(address)
+        .then(function(){
+
+          status.textContent =
+            "✓ Contract Address copied!";
+
+          setTimeout(function(){
+
+            status.textContent = "";
+
+          }, 2000);
+
+        })
+        .catch(function(){
+
+          status.textContent =
+            "Copy failed — please copy the address manually.";
+
+        });
+
+    }
+
+  </script>
 
 </body>
 </html>
