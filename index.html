@@ -3,30 +3,96 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+
   <title>EliteWolf</title>
+
   <style>
     :root{
       --bg:#050509;
-      --panel: rgba(255,255,255,0.02);
+      --panel:rgba(255,255,255,0.02);
       --muted:#9aa0a6;
-      --accent:#7ef6e6; /* cyan */
-      --accent-2:#8b6bff; /* purple */
+      --accent:#7ef6e6;
+      --accent-2:#8b6bff;
       --danger:#ff6b6b;
-      --glass-border: rgba(255,255,255,0.03);
-      --button-bg: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      --glass-border:rgba(255,255,255,0.03);
+      --button-bg:linear-gradient(
+        90deg,
+        rgba(255,255,255,0.06),
+        rgba(255,255,255,0.03)
+      );
     }
-    html,body{ height:100%; margin:0; background: radial-gradient(1200px 600px at 10% 10%, rgba(120,45,255,0.06), transparent), linear-gradient(180deg,#040404 0%, #071016 100%); color:#eaeaea; font-family:system-ui,-apple-system,sans-serif; font-size:16px; line-height:1.6; }
-    a{ color:inherit }
 
-    .container{ max-width:1100px; margin:auto; padding:36px 20px 60px; text-align:center; }
+    html,
+    body{
+      height:100%;
+      margin:0;
+      background:
+        radial-gradient(
+          1200px 600px at 10% 10%,
+          rgba(120,45,255,0.06),
+          transparent
+        ),
+        linear-gradient(
+          180deg,
+          #040404 0%,
+          #071016 100%
+        );
+      color:#eaeaea;
+      font-family:system-ui,-apple-system,sans-serif;
+      font-size:16px;
+      line-height:1.6;
+    }
 
-    /* Logo stays exactly as-is visually */
-    .logo-wrap{ display:flex; align-items:center; justify-content:center; margin:0 auto 10px auto; }
-    .logo-img{ width:320px; max-width:86%; height:auto; border-radius:0; object-fit:contain; border:none; box-shadow:none; transition:transform .18s ease; background:transparent; display:block; }
-    .logo-img:hover{ transform: translateY(-4px); }
+    a{
+      color:inherit;
+    }
 
-    /* Title with strong glowing pulsing animation */
-    .title-row{ display:flex; flex-direction:column; align-items:center; gap:12px; }
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:36px 20px 60px;
+      text-align:center;
+    }
+
+    /* =========================
+       LOGO
+    ========================= */
+
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:0 auto 10px auto;
+    }
+
+    .logo-img{
+      width:320px;
+      max-width:86%;
+      height:auto;
+      border-radius:0;
+      object-fit:contain;
+      border:none;
+      box-shadow:none;
+      transition:transform .18s ease;
+      background:transparent;
+      display:block;
+    }
+
+    .logo-img:hover{
+      transform:translateY(-4px);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .title-row{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+    }
+
     h1{
       margin:8px 0 0 0;
       font-size:60px;
@@ -34,124 +100,670 @@
       text-transform:uppercase;
       font-weight:900;
       line-height:1;
-      color: #fff;
+      color:#fff;
       position:relative;
       z-index:1;
+
       -webkit-font-smoothing:antialiased;
-      background: linear-gradient(90deg,#ffffff 0%, #c9fffb 45%, #b3ffea 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: pulseGlow 3.6s ease-in-out infinite;
+
+      background:
+        linear-gradient(
+          90deg,
+          #ffffff 0%,
+          #c9fffb 45%,
+          #b3ffea 100%
+        );
+
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+
+      animation:pulseGlow 3.6s ease-in-out infinite;
       will-change:transform;
-      text-shadow: 0 0 24px rgba(126,246,230,0.08), 0 0 48px rgba(139,107,255,0.04);
+
+      text-shadow:
+        0 0 24px rgba(126,246,230,0.08),
+        0 0 48px rgba(139,107,255,0.04);
     }
+
     @keyframes pulseGlow{
-      0% { filter: drop-shadow(0 0 0 rgba(126,246,230,0.0)); transform:translateY(0) scale(1); }
-      30% { filter: drop-shadow(0 0 32px rgba(126,246,230,0.18)); transform:translateY(-2px) scale(1.02); }
-      60% { filter: drop-shadow(0 0 48px rgba(139,107,255,0.12)); transform:translateY(0) scale(1); }
-      100% { filter: drop-shadow(0 0 0 rgba(126,246,230,0.0)); transform:translateY(0) scale(1); }
+      0%{
+        filter:drop-shadow(
+          0 0 0 rgba(126,246,230,0.0)
+        );
+        transform:translateY(0) scale(1);
+      }
+
+      30%{
+        filter:drop-shadow(
+          0 0 32px rgba(126,246,230,0.18)
+        );
+        transform:translateY(-2px) scale(1.02);
+      }
+
+      60%{
+        filter:drop-shadow(
+          0 0 48px rgba(139,107,255,0.12)
+        );
+        transform:translateY(0) scale(1);
+      }
+
+      100%{
+        filter:drop-shadow(
+          0 0 0 rgba(126,246,230,0.0)
+        );
+        transform:translateY(0) scale(1);
+      }
     }
 
-    .tagline{ color: var(--muted); margin-top:6px; font-size:16px; }
+    .tagline{
+      color:var(--muted);
+      margin-top:6px;
+      font-size:16px;
+    }
 
-    /* CTA buttons near the title */
-    .cta-row{ display:flex; gap:12px; align-items:center; justify-content:center; margin-top:18px; flex-wrap:wrap; }
+    .hero{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:6px;
+    }
+
+    /* =========================
+       MAIN CTA BUTTONS
+    ========================= */
+
+    .cta-row{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+      margin-top:18px;
+      flex-wrap:wrap;
+    }
+
     .btn{
-      display:inline-flex; align-items:center; gap:10px; padding:12px 20px; border-radius:14px; font-weight:800; font-size:15px; text-decoration:none; cursor:pointer;
-      border:1px solid rgba(255,255,255,0.06); background:var(--button-bg); color:#e9fbf8; transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
-      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
-      -webkit-tap-highlight-color: transparent;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 20px;
+      border-radius:14px;
+      font-weight:800;
+      font-size:15px;
+      text-decoration:none;
+      cursor:pointer;
+
+      border:1px solid rgba(255,255,255,0.06);
+      background:var(--button-bg);
+      color:#e9fbf8;
+
+      transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        background .18s ease;
+
+      box-shadow:
+        0 8px 30px rgba(2,6,23,0.6);
+
+      -webkit-tap-highlight-color:transparent;
     }
-    .btn:active{ transform:translateY(1px) scale(.997); }
+
+    .btn:active{
+      transform:translateY(1px) scale(.997);
+    }
+
     .btn-primary{
-      background: linear-gradient(90deg, rgba(126,246,230,0.08), rgba(139,107,255,0.06));
-      border: 1px solid rgba(126,246,230,0.12);
+      background:
+        linear-gradient(
+          90deg,
+          rgba(126,246,230,0.08),
+          rgba(139,107,255,0.06)
+        );
+
+      border:1px solid rgba(126,246,230,0.12);
       color:#dffefb;
     }
+
     .btn-ghost{
-      background: transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted);
-    }
-    /* subtle glowing animation on hover/tap */
-    .btn:hover, .btn:focus{
-      transform: translateY(-4px) scale(1.01);
-      box-shadow: 0 18px 42px rgba(2,6,23,0.65), 0 0 28px rgba(126,246,230,0.06);
-    }
-    .btn-primary:hover{ box-shadow: 0 20px 60px rgba(126,246,230,0.14), 0 0 56px rgba(126,246,230,0.14); }
-
-    /* Social buttons area (keep original) */
-    .buttons{ margin-top:20px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
-    .buttons a{ display:inline-block; padding:10px 18px; border-radius:12px; background:#fff; color:#0b0b0b; text-decoration:none; font-weight:700; box-shadow: 0 8px 24px rgba(0,0,0,0.45); transition:transform .18s ease; }
-    .buttons a:hover{ transform:translateY(-3px); }
-
-    .section{ margin-top:36px; padding:26px; border-radius:14px; background: var(--panel); border:1px solid var(--glass-border); text-align:left; }
-    .section h2{ font-size:20px; margin:0 0 8px 0; }
-    .section p{ margin:6px 0; color:#d6d6d6; }
-    .contract{ word-break:break-all; color:#bfbfbf; }
-    footer{ margin-top:48px; color:#7a7a7a; text-align:center; }
-
-    /* layout tweaks for title area to keep everything compact on mobile */
-    .hero{ display:flex; flex-direction:column; align-items:center; gap:6px; }
-
-    /* Accessibility: visible focus ring */
-    .btn:focus{ outline:2px solid rgba(126,246,230,0.16); outline-offset:3px; }
-
-    /* Responsive */
-    @media (min-width:720px){ .logo-img{ width:360px; } h1{ font-size:88px; letter-spacing:10px; } .container{ padding-top:48px; } }
-    @media (max-width:420px){ .logo-img{ width:220px; } .container{ padding-top:18px; } h1{ font-size:36px; letter-spacing:4px; } .cta-row{ gap:8px; }
-      .btn{ padding:10px 14px; font-size:13px; border-radius:12px; }
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      color:var(--muted);
     }
 
-    /* Keep the site fast and clean: no heavy assets or fonts loaded */
+    .btn:hover,
+    .btn:focus{
+      transform:translateY(-4px) scale(1.01);
+
+      box-shadow:
+        0 18px 42px rgba(2,6,23,0.65),
+        0 0 28px rgba(126,246,230,0.06);
+    }
+
+    .btn-primary:hover{
+      box-shadow:
+        0 20px 60px rgba(126,246,230,0.14),
+        0 0 56px rgba(126,246,230,0.14);
+    }
+
+    .btn:focus{
+      outline:2px solid rgba(126,246,230,0.16);
+      outline-offset:3px;
+    }
+
+    /* =========================
+       SOCIAL BUTTONS
+    ========================= */
+
+    .buttons{
+      margin-top:20px;
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .buttons a{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:12px;
+      background:#fff;
+      color:#0b0b0b;
+      text-decoration:none;
+      font-weight:700;
+
+      box-shadow:
+        0 8px 24px rgba(0,0,0,0.45);
+
+      transition:transform .18s ease;
+    }
+
+    .buttons a:hover{
+      transform:translateY(-3px);
+    }
+
+    /* =========================
+       ELITEWOLF BETA
+    ========================= */
+
+    .beta-section{
+      margin-top:36px;
+      padding:32px 24px;
+      border-radius:18px;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(126,246,230,0.08),
+          transparent 55%
+        ),
+        rgba(255,255,255,0.025);
+
+      border:1px solid rgba(126,246,230,0.12);
+
+      text-align:center;
+
+      box-shadow:
+        0 12px 45px rgba(0,0,0,0.35);
+    }
+
+    .beta-badge{
+      display:inline-block;
+      padding:6px 14px;
+      margin-bottom:12px;
+
+      border-radius:999px;
+
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:2px;
+
+      color:#dffefb;
+
+      background:rgba(126,246,230,0.08);
+
+      border:1px solid rgba(126,246,230,0.18);
+    }
+
+    .beta-section h2{
+      margin:0 0 8px;
+      font-size:28px;
+      color:#fff;
+    }
+
+    .beta-section p{
+      max-width:650px;
+      margin:8px auto;
+      color:#bfc5c8;
+    }
+
+    .beta-features{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+
+      margin:22px auto;
+
+      max-width:750px;
+    }
+
+    .beta-feature{
+      padding:8px 13px;
+
+      border-radius:10px;
+
+      background:rgba(255,255,255,0.035);
+
+      border:1px solid rgba(255,255,255,0.05);
+
+      color:#d8dddd;
+
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .play-beta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+
+      margin-top:10px;
+
+      padding:15px 30px;
+
+      border-radius:14px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #7ef6e6,
+          #8b6bff
+        );
+
+      color:#050509;
+
+      text-decoration:none;
+
+      font-size:17px;
+      font-weight:900;
+      letter-spacing:.5px;
+
+      box-shadow:
+        0 10px 35px rgba(126,246,230,0.16);
+
+      transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+    }
+
+    .play-beta:hover{
+      transform:translateY(-4px) scale(1.02);
+
+      box-shadow:
+        0 18px 55px rgba(126,246,230,0.25);
+    }
+
+    .beta-note{
+      margin-top:14px !important;
+      font-size:12px !important;
+      color:#777f83 !important;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    .section{
+      margin-top:36px;
+      padding:26px;
+
+      border-radius:14px;
+
+      background:var(--panel);
+
+      border:1px solid var(--glass-border);
+
+      text-align:left;
+    }
+
+    .section h2{
+      font-size:20px;
+      margin:0 0 8px 0;
+    }
+
+    .section p{
+      margin:6px 0;
+      color:#d6d6d6;
+    }
+
+    .contract{
+      word-break:break-all;
+      color:#bfbfbf;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer{
+      margin-top:48px;
+      color:#7a7a7a;
+      text-align:center;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (min-width:720px){
+
+      .logo-img{
+        width:360px;
+      }
+
+      h1{
+        font-size:88px;
+        letter-spacing:10px;
+      }
+
+      .container{
+        padding-top:48px;
+      }
+    }
+
+    @media (max-width:420px){
+
+      .logo-img{
+        width:220px;
+      }
+
+      .container{
+        padding-top:18px;
+      }
+
+      h1{
+        font-size:36px;
+        letter-spacing:4px;
+      }
+
+      .cta-row{
+        gap:8px;
+      }
+
+      .btn{
+        padding:10px 14px;
+        font-size:13px;
+        border-radius:12px;
+      }
+
+      .beta-section{
+        padding:26px 16px;
+      }
+
+      .beta-section h2{
+        font-size:23px;
+      }
+
+      .play-beta{
+        width:100%;
+        box-sizing:border-box;
+      }
+    }
+
   </style>
 </head>
+
 <body>
+
   <div class="container">
 
-    <!-- Original logo centered above the main heading. Using the local repository image file only (no external URLs). -->
-    <div class="logo-wrap" role="img" aria-label="EliteWolf logo">
-      <img class="logo-img" src="file_00000000fa40820a8737b40afeb554cb.png" alt="EliteWolf original logo">
+    <!-- =========================
+         LOGO
+    ========================= -->
+
+    <div
+      class="logo-wrap"
+      role="img"
+      aria-label="EliteWolf logo"
+    >
+      <img
+        class="logo-img"
+        src="file_00000000fa40820a8737b40afeb554cb.png"
+        alt="EliteWolf original logo"
+      >
     </div>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
 
     <div class="hero">
+
       <div class="title-row">
+
         <h1>ELITE WOLF</h1>
-        <div class="tagline">Stay Hungry. Stay Cold. Stay Elite.</div>
+
+        <div class="tagline">
+          Stay Hungry. Stay Cold. Stay Elite.
+        </div>
+
       </div>
 
-      <!-- Join button near main title -->
-      <div class="cta-row" role="navigation" aria-label="Primary actions">
-        <a class="btn btn-primary" href="https://join.pump.fun/HSag/oljv5gu7" target="_blank" rel="noopener noreferrer" aria-label="Buy $ELITEWOLF">BUY $ELITEWOLF</a>
-        <a class="btn btn-ghost" href="https://t.me/EliteWolfCommunity" target="_blank" rel="noopener noreferrer" aria-label="Join the pack on Telegram">JOIN THE PACK</a>
+
+      <!-- Main CTA -->
+
+      <div
+        class="cta-row"
+        role="navigation"
+        aria-label="Primary actions"
+      >
+
+        <a
+          class="btn btn-primary"
+          href="https://join.pump.fun/HSag/oljv5gu7"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Buy $ELITEWOLF"
+        >
+          BUY $ELITEWOLF
+        </a>
+
+        <a
+          class="btn btn-ghost"
+          href="https://t.me/EliteWolfCommunity"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Join the pack on Telegram"
+        >
+          JOIN THE PACK
+        </a>
+
       </div>
+
     </div>
 
-    <div class="buttons" role="navigation" aria-label="Social links">
-      <a href="https://t.me/EliteWolfCommunity" target="_blank" rel="noopener noreferrer">Telegram</a>
-      <a href="https://x.com/EliteWolfCoin" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+
+    <!-- =========================
+         SOCIAL LINKS
+    ========================= -->
+
+    <div
+      class="buttons"
+      role="navigation"
+      aria-label="Social links"
+    >
+
+      <a
+        href="https://t.me/EliteWolfCommunity"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Telegram
+      </a>
+
+      <a
+        href="https://x.com/EliteWolfCoin"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        X / Twitter
+      </a>
+
     </div>
+
+
+    <!-- =========================
+         ELITEWOLF BETA GAME
+    ========================= -->
+
+    <div class="beta-section">
+
+      <div class="beta-badge">
+        BETA LIVE
+      </div>
+
+      <h2>
+        🐺 EliteWolf Game
+      </h2>
+
+      <p>
+        Raise your wolf. Train it. Feed it. Evolve it.
+      </p>
+
+      <p>
+        The first EliteWolf game experience is now available in Beta.
+        Join the pack and start your journey from Wolf Pup to Elite Wolf.
+      </p>
+
+
+      <div class="beta-features">
+
+        <div class="beta-feature">
+          🐺 Wolf Evolution
+        </div>
+
+        <div class="beta-feature">
+          ⚡ Energy System
+        </div>
+
+        <div class="beta-feature">
+          ⚔️ Training
+        </div>
+
+        <div class="beta-feature">
+          🍖 Feeding
+        </div>
+
+        <div class="beta-feature">
+          ⭐ XP System
+        </div>
+
+        <div class="beta-feature">
+          🛒 Food Shop
+        </div>
+
+      </div>
+
+
+      <a
+        class="play-beta"
+        href="https://foxfinanceman.github.io/elitewolf-game/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Play EliteWolf Beta"
+      >
+        🎮 PLAY ELITEWOLF BETA
+      </a>
+
+      <p class="beta-note">
+        Beta version — more features and improvements coming soon.
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         WELCOME
+    ========================= -->
 
     <div class="section">
-      <h2>🐺 Welcome to the Pack</h2>
-      <p>EliteWolf is a community-driven meme coin built around the Wolf Pack.</p>
-      <p>Memes. Community. Ambition.</p>
-      <p>One Wolf is strong. A Pack is stronger.</p>
+
+      <h2>
+        🐺 Welcome to the Pack
+      </h2>
+
+      <p>
+        EliteWolf is a community-driven meme coin built around the Wolf Pack.
+      </p>
+
+      <p>
+        Memes. Community. Ambition.
+      </p>
+
+      <p>
+        One Wolf is strong. A Pack is stronger.
+      </p>
+
     </div>
+
+
+    <!-- =========================
+         ROADMAP
+    ========================= -->
 
     <div class="section">
-      <h2>🚀 Roadmap</h2>
-      <p>Phase 1 — Build the Pack</p>
-      <p>Phase 2 — Grow the Community</p>
-      <p>Phase 3 — Expand EliteWolf</p>
-      <p>Phase 4 — Let the Pack Run</p>
+
+      <h2>
+        🚀 Roadmap
+      </h2>
+
+      <p>
+        Phase 1 — Build the Pack
+      </p>
+
+      <p>
+        Phase 2 — Grow the Community
+      </p>
+
+      <p>
+        Phase 3 — Expand EliteWolf
+      </p>
+
+      <p>
+        Phase 4 — Let the Pack Run
+      </p>
+
     </div>
+
+
+    <!-- =========================
+         TOKEN
+    ========================= -->
 
     <div class="section">
-      <h2>💎 Token</h2>
-      <p class="contract">Contract address will be announced through official channels.</p>
+
+      <h2>
+        💎 Token
+      </h2>
+
+      <p class="contract">
+        Contract address will be announced through official channels.
+      </p>
+
     </div>
 
-    <footer>🐺 EliteWolf — Welcome to the Pack.</footer>
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+      🐺 EliteWolf — Welcome to the Pack.
+    </footer>
+
   </div>
+
 </body>
 </html>
