@@ -54,10 +54,6 @@
       text-align:center;
     }
 
-    /* =========================
-       LOGO
-    ========================= */
-
     .logo-wrap{
       display:flex;
       align-items:center;
@@ -71,4 +67,1048 @@
       height:auto;
       border-radius:0;
       object-fit:contain;
-      border:none
+      border:none;
+      box-shadow:none;
+      transition:transform .18s ease;
+      background:transparent;
+      display:block;
+    }
+
+    .logo-img:hover{
+      transform:translateY(-4px);
+    }
+
+    .title-row{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+    }
+
+    h1{
+      margin:8px 0 0 0;
+      font-size:60px;
+      letter-spacing:8px;
+      text-transform:uppercase;
+      font-weight:900;
+      line-height:1;
+      color:#fff;
+      position:relative;
+      z-index:1;
+
+      -webkit-font-smoothing:antialiased;
+
+      background:
+        linear-gradient(
+          90deg,
+          #ffffff 0%,
+          #c9fffb 45%,
+          #b3ffea 100%
+        );
+
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+
+      animation:pulseGlow 3.6s ease-in-out infinite;
+      will-change:transform;
+
+      text-shadow:
+        0 0 24px rgba(126,246,230,0.08),
+        0 0 48px rgba(139,107,255,0.04);
+    }
+
+    @keyframes pulseGlow{
+      0%{
+        filter:drop-shadow(
+          0 0 0 rgba(126,246,230,0.0)
+        );
+        transform:translateY(0) scale(1);
+      }
+
+      30%{
+        filter:drop-shadow(
+          0 0 32px rgba(126,246,230,0.18)
+        );
+        transform:translateY(-2px) scale(1.02);
+      }
+
+      60%{
+        filter:drop-shadow(
+          0 0 48px rgba(139,107,255,0.12)
+        );
+        transform:translateY(0) scale(1);
+      }
+
+      100%{
+        filter:drop-shadow(
+          0 0 0 rgba(126,246,230,0.0)
+        );
+        transform:translateY(0) scale(1);
+      }
+    }
+
+    .tagline{
+      color:var(--muted);
+      margin-top:6px;
+      font-size:16px;
+    }
+
+    .hero{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:6px;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+      margin-top:18px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 20px;
+      border-radius:14px;
+      font-weight:800;
+      font-size:15px;
+      text-decoration:none;
+      cursor:pointer;
+
+      border:1px solid rgba(255,255,255,0.06);
+      background:var(--button-bg);
+      color:#e9fbf8;
+
+      transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        background .18s ease;
+
+      box-shadow:
+        0 8px 30px rgba(2,6,23,0.6);
+
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .btn:active{
+      transform:translateY(1px) scale(.997);
+    }
+
+    .btn-primary{
+      background:
+        linear-gradient(
+          90deg,
+          rgba(126,246,230,0.08),
+          rgba(139,107,255,0.06)
+        );
+
+      border:1px solid rgba(126,246,230,0.12);
+      color:#dffefb;
+    }
+
+    .btn-ghost{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      color:var(--muted);
+    }
+
+    .btn:hover,
+    .btn:focus{
+      transform:translateY(-4px) scale(1.01);
+
+      box-shadow:
+        0 18px 42px rgba(2,6,23,0.65),
+        0 0 28px rgba(126,246,230,0.06);
+    }
+
+    .btn-primary:hover{
+      box-shadow:
+        0 20px 60px rgba(126,246,230,0.14),
+        0 0 56px rgba(126,246,230,0.14);
+    }
+
+    .btn:focus{
+      outline:2px solid rgba(126,246,230,0.16);
+      outline-offset:3px;
+    }
+
+    .buttons{
+      margin-top:20px;
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .buttons a{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:12px;
+      background:#fff;
+      color:#0b0b0b;
+      text-decoration:none;
+      font-weight:700;
+
+      box-shadow:
+        0 8px 24px rgba(0,0,0,0.45);
+
+      transition:transform .18s ease;
+    }
+
+    .buttons a:hover{
+      transform:translateY(-3px);
+    }
+
+    .beta-section{
+      margin-top:36px;
+      padding:32px 24px;
+      border-radius:18px;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(126,246,230,0.08),
+          transparent 55%
+        ),
+        rgba(255,255,255,0.025);
+
+      border:1px solid rgba(126,246,230,0.12);
+
+      text-align:center;
+
+      box-shadow:
+        0 12px 45px rgba(0,0,0,0.35);
+    }
+
+    .beta-badge{
+      display:inline-block;
+      padding:6px 14px;
+      margin-bottom:12px;
+
+      border-radius:999px;
+
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:2px;
+
+      color:#dffefb;
+
+      background:rgba(126,246,230,0.08);
+
+      border:1px solid rgba(126,246,230,0.18);
+    }
+
+    .beta-section h2{
+      margin:0 0 8px;
+      font-size:28px;
+      color:#fff;
+    }
+
+    .beta-section p{
+      max-width:650px;
+      margin:8px auto;
+      color:#bfc5c8;
+    }
+
+    .beta-features{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+
+      margin:22px auto;
+
+      max-width:750px;
+    }
+
+    .beta-feature{
+      padding:8px 13px;
+
+      border-radius:10px;
+
+      background:rgba(255,255,255,0.035);
+
+      border:1px solid rgba(255,255,255,0.05);
+
+      color:#d8dddd;
+
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .play-beta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+
+      margin-top:10px;
+
+      padding:15px 30px;
+
+      border-radius:14px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #7ef6e6,
+          #8b6bff
+        );
+
+      color:#050509;
+
+      text-decoration:none;
+
+      font-size:17px;
+      font-weight:900;
+      letter-spacing:.5px;
+
+      box-shadow:
+        0 10px 35px rgba(126,246,230,0.16);
+
+      transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+    }
+
+    .play-beta:hover{
+      transform:translateY(-4px) scale(1.02);
+
+      box-shadow:
+        0 18px 55px rgba(126,246,230,0.25);
+    }
+
+    .beta-note{
+      margin-top:14px !important;
+      font-size:12px !important;
+      color:#777f83 !important;
+    }
+
+    .section{
+      margin-top:36px;
+      padding:26px;
+
+      border-radius:14px;
+
+      background:var(--panel);
+
+      border:1px solid var(--glass-border);
+
+      text-align:left;
+    }
+
+    .section h2{
+      font-size:20px;
+      margin:0 0 8px 0;
+    }
+
+    .section p{
+      margin:6px 0;
+      color:#d6d6d6;
+    }
+
+    .roadmap{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .roadmap-card{
+      padding:20px;
+      border-radius:14px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(126,246,230,0.045),
+          rgba(139,107,255,0.035)
+        );
+
+      border:1px solid rgba(255,255,255,0.05);
+
+      transition:
+        transform .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease;
+    }
+
+    .roadmap-card:hover{
+      transform:translateY(-4px);
+
+      border-color:rgba(126,246,230,0.15);
+
+      box-shadow:
+        0 14px 35px rgba(0,0,0,0.28);
+    }
+
+    .roadmap-phase{
+      display:inline-block;
+
+      margin-bottom:7px;
+
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:1.5px;
+
+      color:#7ef6e6;
+    }
+
+    .roadmap-card h3{
+      margin:0 0 10px;
+
+      font-size:18px;
+
+      color:#fff;
+    }
+
+    .roadmap-card ul{
+      margin:0;
+      padding-left:20px;
+
+      color:#c9ced0;
+    }
+
+    .roadmap-card li{
+      margin:5px 0;
+    }
+
+    /* =========================
+       X ELITEWOLF PUP TOKEN
+    ========================= */
+
+    .contract-box{
+      margin-top:14px;
+      padding:18px;
+
+      border-radius:14px;
+
+      background:
+        rgba(255,255,255,0.025);
+
+      border:1px solid rgba(126,246,230,0.10);
+    }
+
+    .contract-label{
+      margin-bottom:10px;
+
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:.7px;
+
+      color:#bfc5c8;
+    }
+
+    .contract-row{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      width:100%;
+    }
+
+    .contract-address{
+      flex:1;
+
+      padding:12px 14px;
+
+      border-radius:10px;
+
+      background:#050509;
+
+      border:1px solid rgba(255,255,255,0.06);
+
+      color:#9ff8ea;
+
+      font-size:13px;
+
+      word-break:break-all;
+      text-align:center;
+
+      box-sizing:border-box;
+    }
+
+    .copy-btn{
+      flex-shrink:0;
+      border:none;
+      padding:12px 16px;
+      border-radius:10px;
+      background:
+        linear-gradient(
+          90deg,
+          #7ef6e6,
+          #8b6bff
+        );
+      color:#050509;
+      font-weight:900;
+      cursor:pointer;
+      transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+    }
+
+    .copy-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:
+        0 10px 30px rgba(126,246,230,0.18);
+    }
+
+    .pump-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+
+      margin-top:12px;
+      width:100%;
+      box-sizing:border-box;
+
+      padding:14px 20px;
+
+      border-radius:12px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(126,246,230,0.12),
+          rgba(139,107,255,0.12)
+        );
+
+      border:1px solid rgba(126,246,230,0.18);
+
+      color:#dffefb;
+
+      text-decoration:none;
+
+      font-weight:900;
+      font-size:15px;
+
+      transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+    }
+
+    .pump-btn:hover{
+      transform:translateY(-3px);
+
+      box-shadow:
+        0 16px 40px rgba(126,246,230,0.12);
+    }
+
+    .copy-status{
+      min-height:20px;
+
+      margin-top:8px;
+
+      font-size:12px;
+
+      color:#7ef6e6;
+
+      text-align:center;
+    }
+
+    footer{
+      margin-top:48px;
+      color:#7a7a7a;
+      text-align:center;
+    }
+
+    @media (min-width:720px){
+
+      .logo-img{
+        width:360px;
+      }
+
+      h1{
+        font-size:88px;
+        letter-spacing:10px;
+      }
+
+      .container{
+        padding-top:48px;
+      }
+    }
+
+    @media (max-width:650px){
+
+      .roadmap{
+        grid-template-columns:1fr;
+      }
+
+      .contract-row{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .contract-address{
+        text-align:center;
+      }
+
+      .copy-btn{
+        width:100%;
+      }
+    }
+
+    @media (max-width:420px){
+
+      .logo-img{
+        width:220px;
+      }
+
+      .container{
+        padding-top:18px;
+      }
+
+      h1{
+        font-size:36px;
+        letter-spacing:4px;
+      }
+
+      .cta-row{
+        gap:8px;
+      }
+
+      .btn{
+        padding:10px 14px;
+        font-size:13px;
+        border-radius:12px;
+      }
+
+      .beta-section{
+        padding:26px 16px;
+      }
+
+      .beta-section h2{
+        font-size:23px;
+      }
+
+      .play-beta{
+        width:100%;
+        box-sizing:border-box;
+      }
+
+      .section{
+        padding:20px 16px;
+      }
+
+      .roadmap-card{
+        padding:17px;
+      }
+
+      .contract-address{
+        font-size:13px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- =========================
+         LOGO
+    ========================= -->
+
+    <div
+      class="logo-wrap"
+      role="img"
+      aria-label="EliteWolf logo"
+    >
+      <img
+        class="logo-img"
+        src="file_00000000fa40820a8737b40afeb554cb.png"
+        alt="EliteWolf original logo"
+      >
+    </div>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <div class="hero">
+
+      <div class="title-row">
+
+        <h1>ELITE WOLF</h1>
+
+        <div class="tagline">
+          Stay Hungry. Stay Cold. Stay Elite.
+        </div>
+
+      </div>
+
+
+      <!-- Main CTA -->
+
+      <div
+        class="cta-row"
+        role="navigation"
+        aria-label="Primary actions"
+      >
+
+        <a
+          class="btn btn-primary"
+          href="#xeWP-token"
+          aria-label="View X EliteWolf Pup"
+        >
+          🐺 $XEWP — BUY NOW
+        </a>
+
+        <a
+          class="btn btn-ghost"
+          href="https://t.me/EliteWolfCommunity"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Join the pack on Telegram"
+        >
+          JOIN THE PACK
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         SOCIAL LINKS
+    ========================= -->
+
+    <div
+      class="buttons"
+      role="navigation"
+      aria-label="Social links"
+    >
+
+      <a
+        href="https://t.me/EliteWolfCommunity"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Telegram
+      </a>
+
+      <a
+        href="https://x.com/EliteWolfCoin"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        X / Twitter
+      </a>
+
+    </div>
+
+
+    <!-- =========================
+         ELITEWOLF BETA GAME
+    ========================= -->
+
+    <div class="beta-section">
+
+      <div class="beta-badge">
+        BETA LIVE
+      </div>
+
+      <h2>
+        🐺 EliteWolf Game
+      </h2>
+
+      <p>
+        Raise your wolf. Train it. Feed it. Evolve it.
+      </p>
+
+      <p>
+        The first EliteWolf game experience is now available in Beta.
+        Join the pack and start your journey from Wolf Pup to Elite Wolf.
+      </p>
+
+      <div class="beta-features">
+
+        <div class="beta-feature">
+          🐺 Wolf Evolution
+        </div>
+
+        <div class="beta-feature">
+          ⚡ Energy System
+        </div>
+
+        <div class="beta-feature">
+          ⚔️ Training
+        </div>
+
+        <div class="beta-feature">
+          🍖 Feeding
+        </div>
+
+        <div class="beta-feature">
+          ⭐ XP System
+        </div>
+
+        <div class="beta-feature">
+          🛒 Food Shop
+        </div>
+
+      </div>
+
+      <a
+        class="play-beta"
+        href="https://foxfinanceman.github.io/elitewolf-game/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Play EliteWolf Beta"
+      >
+        🎮 PLAY ELITEWOLF BETA
+      </a>
+
+      <p class="beta-note">
+        Beta version — more features and improvements coming soon.
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         WELCOME
+    ========================= -->
+
+    <div class="section">
+
+      <h2>
+        🐺 Welcome to the Pack
+      </h2>
+
+      <p>
+        EliteWolf is a community-driven meme coin built around the Wolf Pack.
+      </p>
+
+      <p>
+        Memes. Community. Ambition.
+      </p>
+
+      <p>
+        One Wolf is strong. A Pack is stronger.
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         ROADMAP
+    ========================= -->
+
+    <div class="section">
+
+      <h2>
+        🚀 Roadmap
+      </h2>
+
+      <div class="roadmap">
+
+        <div class="roadmap-card">
+
+          <div class="roadmap-phase">
+            PHASE 1
+          </div>
+
+          <h3>
+            🐺 Foundation
+          </h3>
+
+          <ul>
+            <li>Launch $ELITEWOLF</li>
+            <li>Build the EliteWolf website</li>
+            <li>Build the community</li>
+            <li>Establish the Wolf Pack</li>
+          </ul>
+
+        </div>
+
+
+        <div class="roadmap-card">
+
+          <div class="roadmap-phase">
+            PHASE 2
+          </div>
+
+          <h3>
+            🎮 Game Beta
+          </h3>
+
+          <ul>
+            <li>Launch EliteWolf Game Beta</li>
+            <li>Wolf evolution system</li>
+            <li>Training & XP system</li>
+            <li>Food & inventory system</li>
+            <li>Community testing & feedback</li>
+          </ul>
+
+        </div>
+
+
+        <div class="roadmap-card">
+
+          <div class="roadmap-phase">
+            PHASE 3
+          </div>
+
+          <h3>
+            🔥 Grow the Pack
+          </h3>
+
+          <ul>
+            <li>Grow the EliteWolf community</li>
+            <li>Improve the game</li>
+            <li>Add new gameplay features</li>
+            <li>Community events & competitions</li>
+            <li>Build long-term engagement</li>
+          </ul>
+
+        </div>
+
+
+        <div class="roadmap-card">
+
+          <div class="roadmap-phase">
+            PHASE 4
+          </div>
+
+          <h3>
+            👑 EliteWolf Expansion
+          </h3>
+
+          <ul>
+            <li>Full game release</li>
+            <li>More gameplay mechanics</li>
+            <li>Leaderboards & rewards</li>
+            <li>Expand the EliteWolf ecosystem</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         X ELITEWOLF PUP TOKEN
+    ========================= -->
+
+    <div class="section" id="xeWP-token">
+
+      <h2>
+        🐺 X EliteWolf Pup
+      </h2>
+
+      <p>
+        <strong>$XEWP</strong> — the first stage of the EliteWolf evolution.
+      </p>
+
+      <p>
+        Raise your Pup. Train it. Feed it. Evolve it.
+      </p>
+
+      <p>
+        🐾 PUP → YOUNG → ALPHA → ELITE
+      </p>
+
+      <div class="contract-box">
+
+        <div class="contract-label">
+          🐺 $XEWP CONTRACT ADDRESS
+        </div>
+
+        <div class="contract-row">
+
+          <div
+            class="contract-address"
+            id="contractAddress"
+          >
+            4csZzc7RaVmZ66iNR735zBgi7ySisFcTJjAfANFmpump
+          </div>
+
+          <button
+            class="copy-btn"
+            type="button"
+            onclick="copyContract()"
+          >
+            📋 COPY CA
+          </button>
+
+        </div>
+
+        <div
+          class="copy-status"
+          id="copyStatus"
+          aria-live="polite"
+        >
+          $XEWP is live on Pump.fun 🐺
+        </div>
+
+        <a
+          class="pump-btn"
+          href="https://join.pump.fun/HSag/e61e7bcf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🚀 BUY $XEWP ON PUMP.FUN
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+      🐺 EliteWolf — Welcome to the Pack.
+    </footer>
+
+  </div>
+
+
+  <!-- =========================
+       COPY CONTRACT SCRIPT
+  ========================= -->
+
+  <script>
+    function copyContract(){
+
+      const address =
+        document
+          .getElementById("contractAddress")
+          .textContent
+          .trim();
+
+      const status =
+        document.getElementById("copyStatus");
+
+      navigator.clipboard
+        .writeText(address)
+        .then(function(){
+
+          status.textContent =
+            "✅ Contract address copied!";
+
+        })
+        .catch(function(){
+
+          status.textContent =
+            "❌ Copy failed — please copy manually.";
+
+        });
+    }
+  </script>
+
+</body>
+</html>
